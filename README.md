@@ -160,6 +160,22 @@ var request = new PaymentRequest() {
 request.SetHashData(envConfig.Password);
 ```
 
+> Satış ve Taksitli Satış - Provizyon
+
+```csharp
+var request = new ProvisionRequest() {
+	Language = Language.TR.GetValue(),
+	MerchantId = Convert.ToInt32(envConfig.MerchantId),
+	CustomerId = Convert.ToInt32(envConfig.CustomerId),
+	Username = envConfig.Username,
+	OrderId = 114294527,
+	MerchantOrderId = "KT TEST",
+	Amount = "100",
+	Md = "9KTajMvFkCEmNHmdwS4NkUrYQjg6l89td4FfGrfFMAfBb61nxxUAbEktO4sCEz2f"
+};
+request.SetHashData(envConfig.Password);
+```
+
 > İptal, İade ve Kısmi İade
 
 ```csharp
