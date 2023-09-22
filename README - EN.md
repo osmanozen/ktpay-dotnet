@@ -1,27 +1,27 @@
 # ktpay-dotnet 
 
-This project contains integration infrastructure code developed for Kuveyt Turk Participation Bank Virtual POS services. The codes included in the project must be used to integrate and perform virtual POS transactions for online payment services provided by Kuveyt Turk Participation Bank. Any unauthorized use for different purposes will be detected by the bank, and punitive measures will be applied.
+Bu proje, Kuveyt Türk Katılım Bankası Sanal POS servisleri için geliştirilen entegrasyon alt yapı kodlarını içermektedir. Proje içerisinde yer alan kodlar, Kuveyt Türk Katılım Bankası tarafından sunulan çevrimiçi ödeme hizmetlerini entegre etmek ve sanal pos işlemlerini gerçekleştirmek amacıyla kullanılabilir. Aksi kullanımlar banka tarafından tespit edilip cezai yaptırımlar uygulanmaktadır.
 
-[Türkçe](https://github.com/osmanozen/ktpay-dotnet/blob/main/README.md)
+[English](https://github.com/osmanozen/ktpay-dotnet/blob/main/README-EN.md)
 
-## Requirements
+## Gereksinimler
 
 * **.NET Standart 2.0, .NET Standart 2.1**
-* **.NET Core 7** (for Tests ve Web)
+* **.NET Core 7** (Tests ve Web projeleri için)
 
-## Installation
+## Kurulum
 
-You can download the latest version .zip file from the following address:
+Güncel sürüm .zip dosyasını şu adresten indirebilirsiniz:
 https://github.com/osmanozen/ktpay-dotnet/releases
 
-## Example Code
+## Örnek Kodlar
 
-> Payment
+> Satış
 
 ```csharp
 var request = new PaymentRequest() {
     PaymentType = 1,
-    Language = Language.EN.GetValue(),
+    Language = Language.TR.GetValue(),
     MerchantOrderId = "KT TEST",
     SuccessUrl = "http://localhost:3000/KTPay/Success",
     FailUrl = "http://localhost:3000/KTPay/Fail",
@@ -88,12 +88,12 @@ var request = new PaymentRequest() {
 request.SetHashData(envConfig.Password);
 ```
 
-> Payment with Installment
+> Taksitli Satış
 
 ```csharp
 var request = new PaymentRequest() {
     PaymentType = 1,
-    Language = Language.EN.GetValue(),
+    Language = Language.TR.GetValue(),
     MerchantOrderId = "KT TEST",
     SuccessUrl = "http://localhost:3000/KTPay/Success",
     FailUrl = "http://localhost:3000/KTPay/Fail",
@@ -160,11 +160,11 @@ var request = new PaymentRequest() {
 request.SetHashData(envConfig.Password);
 ```
 
-> Cancel, Drawback and Partial Drawback
+> İptal, İade ve Kısmi İade
 
 ```csharp
 var request = new SaleReversalRequest() {
-    Language = Language.EN.GetValue(),
+    Language = Language.TR.GetValue(),
     SaleReversalType = SaleReversalType.CANCEL, //SaleReversalType.DRAWBACK, SaleReversalType.PARTIAL_DRAWBACK
     MerchantId = Convert.ToInt32(envConfig.MerchantId),
     CustomerId = Convert.ToInt32(envConfig.CustomerId),
@@ -176,11 +176,11 @@ var request = new SaleReversalRequest() {
 request.SetHashData(envConfig.Password);
 ```
 
-> Find Transaction
+> İşlem Sorgulama
 
 ```csharp
 var request = new GetTransactionRequest() {
-    Language = Language.EN.GetValue(),
+    Language = Language.TR.GetValue(),
     MerchantId = Convert.ToInt32(envConfig.MerchantId),
     CustomerId = Convert.ToInt32(envConfig.CustomerId),
     Username = envConfig.Username,
@@ -189,11 +189,11 @@ var request = new GetTransactionRequest() {
 request.SetHashData(envConfig.Password);
 ```
 
-> List Transactions
+> İşlem Listeleme
 
 ```csharp
 var request = new GetTransactionsRequest() {
-    Language = Language.EN.GetValue(),
+    Language = Language.TR.GetValue(),
     MerchantId = Convert.ToInt32(envConfig.MerchantId),
     CustomerId = Convert.ToInt32(envConfig.CustomerId),
     Username = envConfig.Username,
@@ -202,6 +202,6 @@ var request = new GetTransactionsRequest() {
 request.SetHashData(envConfig.Password);
 ```
 
-## License
+## Lisans
 
-This project is licensed under the MIT License. For details, please review the [LICENSE](https://github.com/osmanozen/ktpay-dotnet/blob/main/LICENSE) file.
+Bu proje MIT altında lisanslanmıştır. Ayrıntılar için [LİSANS](https://github.com/osmanozen/ktpay-dotnet/blob/main/LICENSE) dosyasını inceleyin.
