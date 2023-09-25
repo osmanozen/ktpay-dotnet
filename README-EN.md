@@ -164,7 +164,7 @@ request.SetHashData(envConfig.Password);
 
 ```csharp
 var request = new ProvisionRequest() {
-	Language = Language.TR.GetValue(),
+	Language = Language.EN.GetValue(),
 	MerchantId = Convert.ToInt32(envConfig.MerchantId),
 	CustomerId = Convert.ToInt32(envConfig.CustomerId),
 	Username = envConfig.Username,
